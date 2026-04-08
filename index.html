@@ -7,12 +7,32 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <button class="menu-btn" onclick="toggleSidebar()">☰</button>
 
-  <h1 class="title">Weather App ☀️</h1>
-  <div class="container">
+  <button class="theme-btn" onclick="toggleTheme()">🌙</button>
 
-    <input type="text" id="cityInput" placeholder="Enter city name" />
-    <button onclick="weather()">Search</button>
+  <div class="sidebar" id="sidebar">
+    <h3>Recent Searches</h3>
+
+    <input
+      type="text"
+      placeholder="Search History..."
+      oninput="displayHistory(this.value)"
+    />
+
+    <div id="history"></div>
+
+    <h3>Favorites</h3>
+    <div id="favorites"></div>
+  </div>
+
+  <div class="main">
+    <h1 class="title">Weather App ☀️</h1>
+
+    <div class="search-box">
+      <input type="text" id="cityInput" placeholder="Enter city name" />
+      <button onclick="weather()">Search</button>
+    </div>
 
     <div id="weatherResult"></div>
   </div>
